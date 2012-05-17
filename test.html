@@ -1,0 +1,178 @@
+<html>
+<head>
+<meta charset="utf-8">
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="js/effect.js"></script>
+<script>
+$(document).ready(function(){
+
+var fadeOutIn = function(pid, txt, dur, obj, cb)
+{
+    dur = parseInt(dur);
+console.log(obj);
+    //create next children
+    var c = document.createElement("div");
+    c.innerHTML = txt;
+    if (obj != "") {
+        c.setAttribute("style", obj);
+//        $(c).css(obj);
+    }
+    //remove previous children
+    var p = document.getElementById(pid);
+    $(p).children().fadeOut(dur, function(){
+        $(p).html("");
+        //append next children
+        $(c).hide().appendTo(p).fadeIn(dur, function(){ if(cb!=null){cb();} });
+    });
+}
+
+$("#btn2").click(function(){
+    var pid = document.getElementById("pid").value;
+    var txt = document.getElementById("txt").value;
+    var dur = document.getElementById("dur").value;
+    var obj = document.getElementById("obj").value;
+    var cb = function(){ alert("見てくれてありがとう！"); };
+console.log(txt);
+    if (pid != "") {
+        fadeOutIn(pid, txt, dur, obj, cb);
+    } else {
+        alert("ターゲット文字列の親要素のidは必須です");
+    }
+});
+
+$("#button3").click(function(){
+    fadeOutIn("p1","みかの原",1000,"color:#ffcc66;",function(){
+        fadeOutIn("p2","わきて流るる",300,"color:#ff9999;",function(){
+            fadeOutIn("p3","いづみ川",900,"color:#ff99cc;",function(){
+                fadeOutIn("p4","いつみきとてか",700,"color:#ff99ff;",function(){
+                    fadeOutIn("p5","恋しかるらん",1200,"color:#ff66ff;");
+                });
+            });
+        });
+    });
+});
+
+$("#button4").click(function(){
+    fadeOutIn("p6",'りっちゃん<br><img src="img/ritu1.jpg" width="400px">',500,"text-shadow:8px 8px 10px orange;font-size:20px;",function(){
+    fadeOutIn("p6",'もう一度りっちゃん<br><img src="img/ritu2.jpg" width="400px">',500,"text-shadow:-10px -10px 15px orange;font-size:40px;",function(){
+    fadeOutIn("p6",'極めつけに追いりっちゃん<br><img src="img/ritu3.jpg" width="400px">',500,"text-shadow:0px 0px 20px orange;font-size:60px;");
+    });
+    });
+}); 
+
+});
+</script>
+<style>
+.type {
+    color:blue;
+    font-size:small;
+}
+</style>
+</head>
+<body>
+<h1>fadeOutIn( <span class="type">string</span> pid, <span class="type">string</span> txt, <span class="type">integer</span> dur, <span class="type">css-object</span> obj, <span class="type">function</span> cb)</h1>
+<hr>
+<h3>呼び方</h3>
+<h4>html側</h4>
+<xmp>
+<div id="任意のid名"><span（span,img,divなど推奨）>ほげふがぴよ</span></div>
+<div id="button">Click Here</div>
+</xmp>
+<h4>javascript側</h4>
+<xmp>
+$("#button").click(function(){
+        fadeOutIn("上で設定した任意のid名", "新しいテキスト", 500, "color:blue;", function(){ alert("見てくれてありがとう！"); });
+});
+</xmp>
+<hr>
+<h3>体験サンプル</h3>
+<table border="1">
+<tr><td>id="pid1"</td><td><div id="pid1"><span>あああ</span></div></td></tr>
+<tr><td>id="pid2"</td><td><div id="pid2"><span>あああ</span></div></td></tr>
+<tr><td>id="pid3"</td><td><div id="pid3">あああ</div></td><td>親要素の中が生のテキストなので、無効。</td></tr>
+<tr><td>id="hoge"</td><td><div id="hoge"><img src="https://twimg0-a.akamaihd.net/profile_images/1522925119/_____03.jpg" width="50px"></div></td><td>子要素をimgにしてみました</td></tr>
+<tr><td>id="piyo"</td><td><ul id="piyo"><li>りっちゃん</li><li>ぺろぺろ</li></ul></td><td>親要素をulにしたので,子要素はliが望ましい</td></tr>
+<tr><td colspan="2">
+編集できます↓<br>
+引数１：<input type="text" id="pid" value="pid2" size="80"  placeholder="対象とするidをここに入力"/><br>
+引数２：<input type="text" id="txt" value="新しいテキスト" size="80"  placeholder="新しいテキストをここに入力"/><br>
+引数３：<input type="text" id="dur" value="500" size="80"  placeholder="エフェクトのdureationここに入力"/><br>
+引数４：<input type="text" id="obj" value="color:blue;" size="80"  placeholder="css文をここに入力(任意)"/><br>
+引数５：function(){ alert("見てくれてありがとう！"); }
+</td></tr>
+<tr><td></td><td><div id="btn2" style="background-color:#dcdcdc;border-radius:5px;border:thin solid black;box-shadow:0px 10px 10px white inset;cursor:pointer;">Click Here</div></td></tr>
+</table>
+<hr>
+<h3>関数定義コード全文（jQuery required）</h3>
+<xmp>
+var fadeOutIn = function(pid, txt, dur, obj, cb)
+{
+    dur = parseInt(dur);
+    //新しい子要素をつくる
+    var c = document.createElement("span");
+    c.innerHTML = txt;
+    if (obj != "") {
+        c.setAttribute("style", obj);
+    }
+    //今表示されている子要素を消す
+    var p = document.getElementById(pid);
+    $(p).children().fadeOut(dur, function(){
+        $(p).html("");
+        //新しい子要素を追加する
+        $(c).hide().appendTo(p).fadeIn(dur,function(){if(cb!=null){ cb(); }});
+    });
+}
+</xmp>
+<hr>
+<h3>こういう使い方もできるかも</h3>
+<table border="10">
+<tr><td>
+<div id="button3" style="background-color:#dcdcdc;border-radius:5px;border:thin solid black;box-shadow:0px 10px 10px white inset;cursor:pointer;width:200px;">実行</div>
+<div id="container" style="height:150px;">
+<div id="p1"><span></span></div>
+<div id="p2"><span></span></div>
+<div id="p3"><span></span></div>
+<div id="p4"><span></span></div>
+<div id="p5"><span></span></div>
+</div>
+</td>
+<td>
+<div id="p6"><div id="button4" style="background-color:#dcdcdc;border-radius:5px;border:thin solid black;box-shadow:0px 10px 10px white inset;cursor:pointer;width:200px;">爆発</div></div>
+</td>
+</tr>
+<tr>
+<td>
+<xmp>
+$("#button3").click(function(){
+    fadeOutIn("p1","みかの原",1000,"color:blue;",function(){
+        fadeOutIn("p2","わきて流るる",300,"color:purple",function(){
+            fadeOutIn("p3","いづみ川",900,"color:black",function(){
+                fadeOutIn("p4","いつみきとてか",700,"color:purple;",function(){
+                    fadeOutIn("p5","恋しかるらん",1200,"color:red;");
+                });
+            });
+        });
+    });
+});
+</xmp>
+</td>
+<td>
+<xmp>
+$("#button4").click(function(){
+    fadeOutIn("p6",'<img src="img/ritu1.jpg" width="400px">りっちゃん',500,"border:thin solid black;",function(){
+        fadeOutIn("p6",'<img src="img/ritu2.jpg" width="400px">もう一度りっちゃん',500,"border:thin solid black;",function(){
+            fadeOutIn("p6",'<img src="img/ritu3.jpg" width="400px">極めつけに追いりっちゃん',500,"border:thin solid black;");
+        });
+    });
+}); 
+
+
+
+</xmp>
+</td>
+</tr>
+
+
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--
+----  ソースを覗いてくれてありがとうございます！
+----　
+----　引き続き、自分がやりたいことにアホみたいにコミットしていきたいです！
+----  お気づきの点があれば @otiai10 on twitter まで！
+----
+----  thnaks to
+----
+----  http://kmsys-freesozai.seesaa.net/article/156674105.html
+----  http://utf-8.jp/tool/calsearch.html
+----  http://loadinfo.net/
+----  http://phpjavascriptroom.com/?t=js&p=ereg_lastmatch
+----
+----  and you!
+-->
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="author" content="otiai10">
+<meta name="description" content="暇を持て余したぼっちの遊び場">
+<meta name="keywords" content="ホリデイ 休日 暇 アテンド ATND">
+<title>ApTND ~アプテンド~ β</title>
+<script type="text/javascript" src="../jq/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../publicjs/date.js"></script>
+<script type="text/javascript" src="../publicjs/calender.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/effect.js"></script>
+<link rel="stylesheet" href="css/main.css" type="text/css"/>
+<link rel="shortcut icon" href="img/favicon.ico">
+
+</head>
+<body>
+
+
+<div id="explain"><img src="img/panda_big.gif" id="pandainexplain" class="escape">
+<span id="explaintxt">
+<h1>Thank you for comming!!</h1><br><br>
+来てくれてありがとう！<br>
+暇つぶしウェブアプリ、ApTND(あぷてんど)です！<br><br>
+ATNDよりも気軽にちょっと暇な日に<br>
+無料()のイベントを探してみよう！<br><br>
+<a href="./iPhone/" class="hrf"><span id="iPhone">iPhone用ページはこちら</span></a><br><br><br>
+<span id="escape" class="escape">click to start</span>
+</div>
+<div id="explanation"></div>
+
+
+<!------------------------------------>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+<!------------------------------------>
+
+<div id="wrapper">
+
+
+<div id="aboutfreeflag">
+<img src="img/panda_big.gif" style="width:100px;float:left;"><b>「無料」</b>にマッチした箇所<hr>・・・<span style="text-align:center" id="caution">無料ゆうたかて、<br>文章検索して「無料」て言葉があっただけやさかい、<br>期待せんといてな</span>・・・
+</div>
+
+<div id="hiddenwindow">
+    <div id="selected" style="color:#dcdcdc;"><span>date</span></div>
+    <iframe id="hiddenframe" name="window" src="" seamless="yes" >
+    </iframe>
+    <div id="closebtn"><div id="square"></div></div>
+</div>
+
+
+
+
+<div id="header" class="head_foot">
+<h2>A<span style="color:#000099">p</span>TND β
+</h2>
+
+<img src="img/panda_big.gif" id="pandainhead"/>
+
+<div id="share">
+<div class="fb-like" data-href="http://goo.gl/EhM6A" data-send="false" data-width="100" data-show-faces="false" data-font="arial" data-layout="button_count" style="margin:0;"></div>
+<div style="margin-top:5px;">
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://goo.gl/EhM6A" data-text="気軽イベント潜入ツール ApTND powered by ATND" data-lang="ja" data-hashtags="ApTND">ツイート</a>
+</div>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+    if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}
+}(document,"script","twitter-wjs");
+</script>
+</div>
+
+<span style="font-size:small;">~powered by <a href="http://atnd.org/" target="_blank" style="text-decoration:none;" style="position:absolute;right:30px;">ATND</a>~</span>
+
+</div><!-- END of header -->
+<hr>
+
+<div id="mess"></div>
+
+<div id="leftcont" >
+    <div id="calspace">
+        <div id="thismonth" class="mon"></div>
+        <div id="nextmonth" class="mon"></div>
+    </div>
+    <div id="options" >
+        検索オプション<br>
+            <div class="option">
+                <span class="tit">キーワード</span><br>
+                <span><input id="keyword" type="text" size="18" name="keyword"></span>
+            </div>
+            <div class="option">
+                <span class="tit">無料フラグ縛り</span><br>
+                <div id="onlyfree"><div id="switch"></div><span id="onoff"><span>OFF</span></span></div>
+            </div>
+    </div>
+</div>
+
+<div id="titlecont">
+<div id="atama"><span id="dotama">click calender</span></div>
+<div id="pool"></div>
+<div id="ketu"><div>events</div></div>
+</div>
+
+
+<hr style="clear:both;">
+<a href="https://twitter.com/#!/otiai10" style="text-decoration:none;" target="_blank"><div id="tail">Created by otiai10. Please feedback!!</div></a>
+<span id="warning">InternetExplorerでは動作確認が出来ていません！</span>
+</div><!-- END of wrapper -->
+</script>
+</body>
+</html>
