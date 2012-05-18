@@ -16,6 +16,7 @@ html body {
     width:100%;
     height:100%;
     clear:both;
+    overflow-x:hidden;
 }
 
 body {
@@ -24,7 +25,7 @@ body {
     line-height:1.7em;
     font-family:Helvetica, 'ヒラギノ角ゴ Pro W3','HiraKakuProN-W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
     text-align: center;
-    text-shadow:0px 0px 3px #dcdcdc;
+    text-shadow:0px 0px 5px gray;
 }
 
 #explain {
@@ -219,7 +220,7 @@ width:10%;
     border:thin solid black;
     border-top-left-radius: 10px;
     border-top-right-radius:10px;
-    box-shadow:0px 5px 5px white inset;
+    box-shadow:0px 5px 5px white inset, 0 0 1px #030303;
     height:30px;
 }
 #ketu {
@@ -227,7 +228,7 @@ width:10%;
     border:thin solid black;
     border-bottom-left-radius:10px;
     border-bottom-right-radius:10px;
-    box-shadow:0px -5px 5px #cccccc inset;
+    box-shadow:0px -5px 5px #cccccc inset, 0 0 1px #030303;
     height:30px;
     margin-bottom:50px;
 }
@@ -284,12 +285,12 @@ hr {
 }
 #options {
     width:100%;
-    height:180px;
     float:left;
     margin-top:10px;
     border-radius:10px;
     border: medium double #cccccc;
     margin-bottom:50px;
+    text-shadow: 0 0 4px #dcdcdc;
 }
 .option {
 width:100%;
@@ -300,6 +301,15 @@ height:40%;
 .tit {
     font-size:large;
 }
+#eg{
+    width:90%;
+    border:thin solid black;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:10px;
+    margin-bottom:10px;
+    box-shadow:0px 0px 10px #dcdcdc inset, 0px 0px 10px #dcdcdc;
+}
 #keyword {
     font-size:x-large;
 size:10;
@@ -309,14 +319,13 @@ width:120px;
 height:40px;
 border-radius:40px;
 background-color:#f0f8ff;
-box-shadow:1px 2px 5px gray inset;
+box-shadow:1px 2px 5px gray inset, 0px 0px 1px black;
 border: thin solid black;
 margin-left:auto;
 margin-right:auto;
 font-size:large;
 text-align:center;
 cursor:pointer;
-<<<<<<< HEAD
 }
 #onoff {
 position:relative;
@@ -331,10 +340,8 @@ height:30px;
 border-radius:30px;
 float:left;
 background-color:#909090;
-box-shadow:3px 6px 19px #dcdcdc inset;
+box-shadow:3px 6px 19px #dcdcdc inset, 0px 0px 1px #030303;
 border:thin solid black;
-=======
->>>>>>> 48f220290fc1c5f4f4a5d8200186ed58d9e54879
 }
 #onoff {
 position:relative;
@@ -391,6 +398,7 @@ td:hover {
     margin-right:3%;
     font-size:small;
     -webkit-transition:color 0.2s linear;
+    text-shadow:0 0 0;
 }
 #tail:hover {
     color:#dcdcdc;
@@ -400,6 +408,7 @@ td:hover {
 width:100%;
 color:#dcdcdc;
 font-size:small;
+text-shadow:0 0 0;
 }
 
 

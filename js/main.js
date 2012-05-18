@@ -50,6 +50,7 @@ $(".escape").click(function(){
 
 $("#onlyfree").toggle(
     function(){
+        console.log("FREE-ON");
         fadeOutIn("onoff","ON",300,"position:relative;right:12px;");
         $("#switch").animate({
             left:"85px"
@@ -60,6 +61,7 @@ $("#onlyfree").toggle(
         queryfree = true;
     },
     function(){
+        console.log("FREE-OFF");
         fadeOutIn("onoff","OFF",300,"position:relative;right:12px;");
 
         $("#switch").animate({
