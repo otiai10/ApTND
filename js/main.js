@@ -277,7 +277,5 @@ function htmlspecialcharsAptnd(ch) {
 
 
 
-
-
 /////////////////////////////
 });
