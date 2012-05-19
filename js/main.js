@@ -36,11 +36,12 @@ if (m == 12) {
 
 
 /////////////////////////////////////////各種クリック
-$("#pandainhead").click(function(){
+$(".shade").click(function(){
     $("#pool").slideUp();
     $("#explanation").fadeIn(200,function(){
         $("#explain").fadeIn();
     });
+    $("#tutrial").fadeIn(200);
 });
 
 $(".escape").click(function(){
@@ -82,6 +83,7 @@ $("td").click(function(){ //////////////"td" click event
 $("td").css({color:"#39c"});
 $(this).css({color:"red"});
 
+
 fadeOutIn("atama",
     '<img src="img/loader/loader05.gif" width="20px"/>　 now loading', 300,"color:blue"
 );
@@ -120,6 +122,9 @@ $.ajax({
     url: url,
     dataType: "jsonp",
     success: function(res){
+
+        $("#tutrial").fadeOut(300);
+
         var title = ye+"年"+mo+"月"+da+"日のイベント" ;
         var moretxt = "";
         fadeOutIn("atama", title, 200,"",function(){
