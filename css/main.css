@@ -65,7 +65,8 @@ cursor:pointer;
     font-size:x-large;
 }
 #escape:hover {
-    text-shadow:0px 0px 18px white;
+    text-shadow:0px 0px 60px white;
+cursor:pointer;
 }
 
 #pandainexplain {
@@ -92,7 +93,8 @@ opacity:0.6;
     text-decoration:none;
 }
 #iPhone:hover {
-    text-shadow:0px 0px 20px #fff;
+    text-shadow:0px 0px 50px #fff;
+cursor:pointer;
 }
 
 #aboutfreeflag {
