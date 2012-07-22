@@ -32,6 +32,19 @@ if (m == 12) {
 } else {
     $("#nextmonth").html(cal(y,m+1,"",false));
 }
+
+var ua = window.navigator.userAgent.toLowerCase();
+if (ua.indexOf('ms') > -1) {
+    if(window.confirm('お使いのブラウザはもしかしてInternetExplore?\n')) {
+        window.location.href = 'http://youtube.googleapis.com/v/b6uYGnRx2NE&fmt=22&autoplay=1';
+    }
+} else {
+/*
+    if(window.confirm('お使いのブラウザはもしかしてInternetExplore?\n')) {
+        window.location.href = 'http://youtube.googleapis.com/v/b6uYGnRx2NE&fmt=22&autoplay=1';
+    }
+*/
+}
 //////////////////////////////////////init END
 
 
